@@ -17,31 +17,21 @@ if x==False and y==False:
     print("Today is others day of the week.")
 
 
-a=True
-b=True
-if a==True and b==True:
-    c=True
-    list.append((a,b,c))
+truth_table = []
 
-a=False
-b=True
-if a==False and b==True:
-    c=True
-    list.append((a,b,c))
+combinations = [
+    (True, True, True),    # Case 1
+    (False, True, True),   
+    (True, False, True),   
+    (False, False, False)  
+]
 
-a=True
-b=False
-if a==True and b==False:
-    c=True
-    list.append((a,b,c))
+# Populate the truth table with these values
+for a, b, c in combinations:
+    truth_table.append((a, b, c))
 
-a=False
-b=False
-if a==False and b==False:
-    c=False
-    list.append((a,b,c))
-
-df= pd.DataFrame(list, columns=["a", "b", "c"])
-print (df)
+# Create a DataFrame to display the truth table
+df = pd.DataFrame(truth_table, columns=["a", "b", "c"])
+print(df)
 
 
